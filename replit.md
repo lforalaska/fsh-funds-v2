@@ -1,7 +1,7 @@
 # FastAPI + React Boilerplate
 
 ## Overview
-This is a full-stack web application with a Python FastAPI backend and React TypeScript frontend. The project was successfully imported from GitHub and configured for the Replit environment.
+This is a full-stack web application with a Python FastAPI backend and React TypeScript frontend. Always refer to the root README for project details.
 
 ## Recent Changes (September 9, 2025)
 - Imported from GitHub and set up for Replit environment
@@ -50,7 +50,7 @@ This is a full-stack web application with a Python FastAPI backend and React Typ
 - Uses Uvicorn production server
 
 ## User Preferences
-- No specific user preferences recorded yet
+- Prioritize clean code and correct implementation over "making it work"
 
 ## Status
 ✅ Project successfully imported and configured for Replit
