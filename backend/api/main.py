@@ -129,6 +129,10 @@ async def health_check():
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["auth"])
 app.include_router(users.router, prefix="/api/v1/users", tags=["users"])
 
+# Import and include donor router
+from api.routers.donors import donors_router
+app.include_router(donors_router, prefix="/api/v1/donors", tags=["donors"])
+
 
 if __name__ == "__main__":
     import uvicorn
