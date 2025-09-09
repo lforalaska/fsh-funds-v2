@@ -2,26 +2,29 @@
 from typing import Optional
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from models.user import User
 
 
-security = HTTPBearer()
+security = HTTPBearer(auto_error=False)
 
 
 async def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(security)
-) -> dict:
+    credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)
+) -> User:
     """Get current authenticated user."""
-    # This is a placeholder implementation
-    # In a real app, you would validate the JWT token here
-    if not credentials:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Not authenticated",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
+    # For now, return a mock user for development
+    # In production, this would validate JWT tokens and fetch user from database
     
-    # Placeholder: return a mock user
-    return {"id": 1, "username": "admin", "email": "admin@example.com"}
+    # Create a mock user for development
+    mock_user = User(
+        id=1,
+        username="admin",
+        email="admin@fshfunds.com", 
+        hashed_password="mock_hash",
+        is_active=True,
+        is_superuser=True
+    )
+    return mock_user
 
 
 async def get_optional_current_user(

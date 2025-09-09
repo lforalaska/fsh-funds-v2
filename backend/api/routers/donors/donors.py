@@ -10,11 +10,8 @@ from models.donors.donor import Donor
 from api.services.donors.donor_service import DonorService
 
 
-# Database dependency (simplified for now)
-def get_session():
-    """Get database session - to be implemented with proper dependency injection."""
-    # This would be implemented with proper database session management
-    pass
+# Import database session
+from api.dependencies.database import get_session
 
 
 # Pydantic models for requests/responses
