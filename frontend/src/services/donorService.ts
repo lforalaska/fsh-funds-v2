@@ -182,6 +182,3 @@ class DonorService {
 }
 
 export const donorService = new DonorService();
-
-// Explicit re-exports to ensure proper module loading
-export type { Donor, DonorCreate, DonorUpdate };
